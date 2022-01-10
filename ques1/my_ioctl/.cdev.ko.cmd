@@ -1,0 +1,1 @@
+cmd_/home/pprerna/CDAC/Device_Driver/eg/my_ioctl/cdev.ko := ld -r -m elf_x86_64  --build-id=sha1  -T scripts/module.lds -o /home/pprerna/CDAC/Device_Driver/eg/my_ioctl/cdev.ko /home/pprerna/CDAC/Device_Driver/eg/my_ioctl/cdev.o /home/pprerna/CDAC/Device_Driver/eg/my_ioctl/cdev.mod.o;  true

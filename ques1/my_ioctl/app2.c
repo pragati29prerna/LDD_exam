@@ -5,13 +5,14 @@
 #include <unistd.h>
 #include<errno.h>
 
+
 int main()
 {
 	int fd;
-	char Ubuff[50];
-	char *Kbuff="The first user space says HELLO KERNEL"; //msg for kernel
+	char Ubuff[8];
 	
-	fd=open("/dev/MY222",O_RDWR,0777);
+	fd=open("/dev/MYdev",O_RDONLY,0777);
+	printf("opening for read \n");
 	
 	if(fd<0)
 	{
@@ -21,9 +22,9 @@ int main()
  	
 	
 	read(fd,Ubuff,50);//read functionality "read from kernel"
-        write(fd,Kbuff,50); //write functionality "write in kernel"
-        
-	printf("the data read from kernel is %s\n",Ubuff); //printd the data from kernel
+       
+	printf("data: %s\n",Ubuff);
+	
 	close(fd);
 	return 0;
 }
